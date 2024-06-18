@@ -20,140 +20,168 @@ namespace MathsGame
             switch (pChoice)
             {
                 case "a":
-                    Console.WriteLine("You have chose the Addition game.");
-                    do
-                    {
-                        Random random = new Random();
-                        var firstNumber = random.Next(1, 101);
-                        var secondNumber = random.Next(1, 101);
-                        var sumResult = firstNumber + secondNumber;
-                        Console.WriteLine($"What is {firstNumber} + {secondNumber}?");
-                        var pAnswer = Convert.ToInt32(Console.ReadLine());
-                        var playAgain = "";
-                        if (pAnswer == sumResult)
-                        {
-                            Console.WriteLine("Correct!");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Incorrect, the answer is {sumResult}");
-                        }
-                        Console.WriteLine("Would you like you play again, enter Y or N?");
-                        playAgain = Console.ReadLine().Trim().ToLower();
-                        if (playAgain == "y")
-                        {
-                            keepPlaying = true;
-                        }
-                        else
-                        {
-                            keepPlaying = false;
-                        }
-                    } while (keepPlaying == true);
+                    AdditionGame();
                     break;
 
                 case "s":
-                    Console.WriteLine("You have chose the Subtraction game.");
-                    do
-                    {
-                        Random random = new Random();
-                        var firstNumber = random.Next(1, 101);
-                        var secondNumber = random.Next(1, 101);
-                        var sumResult = firstNumber - secondNumber;
-                        Console.WriteLine($"What is {firstNumber} - {secondNumber}?");
-                        var pAnswer = Convert.ToInt32(Console.ReadLine());
-                        var playAgain = "";
-                        if (pAnswer == sumResult)
-                        {
-                            Console.WriteLine("Correct!");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Incorrect, the answer is {sumResult}");
-                        }
-                        Console.WriteLine("Would you like you play again, enter Y or N?");
-                        playAgain = Console.ReadLine().Trim().ToLower();
-                        if (playAgain == "y")
-                        {
-                            keepPlaying = true;
-                        }
-                        else
-                        {
-                            keepPlaying = false;
-                        }
-                    } while (keepPlaying == true);
+                    SubtractionGame();
                     break;
 
                 case "m":
-                    Console.WriteLine("You have chose the Multiplication game.");
-                    do
-                    {
-                        Random random = new Random();
-                        var firstNumber = random.Next(1, 101);
-                        var secondNumber = random.Next(1, 101);
-                        var sumResult = firstNumber * secondNumber;
-                        Console.WriteLine($"What is {firstNumber} * {secondNumber}?");
-                        var pAnswer = Convert.ToInt32(Console.ReadLine());
-                        var playAgain = "";
-                        if (pAnswer == sumResult)
-                        {
-                            Console.WriteLine("Correct!");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Incorrect, the answer is {sumResult}");
-                        }
-                        Console.WriteLine("Would you like you play again, enter Y or N?");
-                        playAgain = Console.ReadLine().Trim().ToLower();
-                        if (playAgain == "y")
-                        {
-                            keepPlaying = true;
-                        }
-                        else
-                        {
-                            keepPlaying = false;
-                        }
-                    } while (keepPlaying == true);
+                    MultiplicationGame();
                     break;
 
                 case "d":
-                    Console.WriteLine("You have chose the Division game.");
-                    do
-                    {
-                        Random random = new Random();
-                        var firstNumber = random.Next(1, 101);
-                        var secondNumber = random.Next(1, 101);
-                        var sumResult = firstNumber / secondNumber;
-                        if ((firstNumber % secondNumber) == 0 && (firstNumber != secondNumber))
-                        {
-                            Console.WriteLine($"What is {firstNumber} / {secondNumber}?");
-                            var pAnswer = Convert.ToInt32(Console.ReadLine());
-                            var playAgain = "";
-                            if (pAnswer == sumResult)
-                            {
-                                Console.WriteLine("Correct!");
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Incorrect, the answer is {sumResult}");
-                            }
-                            Console.WriteLine("Would you like you play again, enter Y or N?");
-                            playAgain = Console.ReadLine().Trim().ToLower();
-                            if (playAgain == "y")
-                            {
-                                keepPlaying = true;
-                            }
-                            else
-                            {
-                                keepPlaying = false;
-                            }
-                        } 
-                    } while (keepPlaying == true);
+                    DivisionGame();
                     break;
 
                 case "q":
                     Console.WriteLine("Thank you for playing the Maths Game!");
                     break;
             }
+        }
+
+        static void AdditionGame()
+        {
+            Console.WriteLine("You have chose the Addition game.");
+            var keepPlaying = true;
+            do
+            {
+                Random random = new Random();
+                var firstNumber = random.Next(1, 101);
+                var secondNumber = random.Next(1, 101);
+                var sumResult = firstNumber + secondNumber;
+                Console.WriteLine($"What is {firstNumber} + {secondNumber}?");
+                var pAnswer = Convert.ToInt32(Console.ReadLine());
+                var playAgain = "";
+                if (pAnswer == sumResult)
+                {
+                    Console.WriteLine("Correct!");
+                }
+                else
+                {
+                    Console.WriteLine($"Incorrect, the answer is {sumResult}");
+                }
+                Console.WriteLine("Would you like you play again, enter Y or N?");
+                playAgain = Console.ReadLine().Trim().ToLower();
+                if (playAgain == "y")
+                {
+                    keepPlaying = true;
+                }
+                else
+                {
+                    Console.WriteLine("Thank you for playing the Maths Game!");
+                    keepPlaying = false;
+                }
+            } while (keepPlaying == true);
+        }
+
+        static void SubtractionGame()
+        {
+            Console.WriteLine("You have chose the Subtraction game.");
+            var keepPlaying = true;
+            do
+            {
+                Random random = new Random();
+                var firstNumber = random.Next(1, 101);
+                var secondNumber = random.Next(1, 101);
+                var sumResult = firstNumber - secondNumber;
+                Console.WriteLine($"What is {firstNumber} - {secondNumber}?");
+                var pAnswer = Convert.ToInt32(Console.ReadLine());
+                var playAgain = "";
+                if (pAnswer == sumResult)
+                {
+                    Console.WriteLine("Correct!");
+                }
+                else
+                {
+                    Console.WriteLine($"Incorrect, the answer is {sumResult}");
+                }
+                Console.WriteLine("Would you like you play again, enter Y or N?");
+                playAgain = Console.ReadLine().Trim().ToLower();
+                if (playAgain == "y")
+                {
+                    keepPlaying = true;
+                }
+                else
+                {
+                    Console.WriteLine("Thank you for playing the Maths Game!");
+                    keepPlaying = false;
+                }
+            } while (keepPlaying == true);
+        }
+
+        static void MultiplicationGame()
+        {
+            Console.WriteLine("You have chose the Multiplication game.");
+            var keepPlaying = true;
+            do
+            {
+                Random random = new Random();
+                var firstNumber = random.Next(1, 101);
+                var secondNumber = random.Next(1, 101);
+                var sumResult = firstNumber * secondNumber;
+                Console.WriteLine($"What is {firstNumber} * {secondNumber}?");
+                var pAnswer = Convert.ToInt32(Console.ReadLine());
+                var playAgain = "";
+                if (pAnswer == sumResult)
+                {
+                    Console.WriteLine("Correct!");
+                }
+                else
+                {
+                    Console.WriteLine($"Incorrect, the answer is {sumResult}");
+                }
+                Console.WriteLine("Would you like you play again, enter Y or N?");
+                playAgain = Console.ReadLine().Trim().ToLower();
+                if (playAgain == "y")
+                {
+                    keepPlaying = true;
+                }
+                else
+                {
+                    Console.WriteLine("Thank you for playing the Maths Game!");
+                    keepPlaying = false;
+                }
+            } while (keepPlaying == true);
+        }
+
+        static void DivisionGame()
+        {
+            Console.WriteLine("You have chose the Division game.");
+            var keepPlaying = true;
+            do
+            {
+                Random random = new Random();
+                var firstNumber = random.Next(1, 101);
+                var secondNumber = random.Next(1, 101);
+                var sumResult = firstNumber / secondNumber;
+                if ((firstNumber % secondNumber) == 0 && (firstNumber != secondNumber))
+                {
+                    Console.WriteLine($"What is {firstNumber} / {secondNumber}?");
+                    var pAnswer = Convert.ToInt32(Console.ReadLine());
+                    var playAgain = "";
+                    if (pAnswer == sumResult)
+                    {
+                        Console.WriteLine("Correct!");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Incorrect, the answer is {sumResult}");
+                    }
+                    Console.WriteLine("Would you like you play again, enter Y or N?");
+                    playAgain = Console.ReadLine().Trim().ToLower();
+                    if (playAgain == "y")
+                    {
+                        keepPlaying = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Thank you for playing the Maths Game!");
+                        keepPlaying = false;
+                    }
+                }
+            } while (keepPlaying == true);
         }
     }
 }
