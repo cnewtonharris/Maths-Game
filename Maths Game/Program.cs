@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Versioning;
 
 namespace MathsGame
 {
@@ -6,16 +7,26 @@ namespace MathsGame
     {
         static void Main(string[] args)
         {   
-            var timeNow = DateTime.Now;
+            
             var keepPlaying = true;
 
+            GetName();
+            Menu();           
+            
+        }
+        static void GetName()
+        {
+            var timeNow = DateTime.Now;
             Console.WriteLine("Welcome to the Maths Game");
             Console.WriteLine("What is your name?");
             var playerName = Console.ReadLine();
-            Console.WriteLine($"Hi {playerName}, it is {timeNow}. Please choose what game you would like to play");
-            Console.WriteLine("A = Addition\nS = Subtraction\nM = Multiplication\nD = Division\nQ = Quit Playing");
+            Console.WriteLine($"Hi {playerName}, it is {timeNow}.");
+        }
+        static void Menu()
+        {
+            Console.WriteLine("Please choose what game you would like to play:\nA = Addition\nS = Subtraction\nM = Multiplication\nD = Division\nQ = Quit Playing");
             var pChoice = Console.ReadLine().Trim().ToLower();
-            
+
             //switch statement with options for each game
             switch (pChoice)
             {
@@ -40,7 +51,6 @@ namespace MathsGame
                     break;
             }
         }
-
         static void AdditionGame()
         {
             Console.WriteLine("You have chose the Addition game.");
